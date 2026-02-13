@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Mod Biz: Margin Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Vibrant Neon Automotive Palette -->
+    <!-- Palette: Midnight Black (#0f172a), Neon Cyan (#06b6d4), Electric Purple (#8b5cf6), Hot Pink (#f43f5e), Slate (#94a3b8) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f1f5f9; }
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 600px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            height: 300px; 
+            max-height: 400px; 
+        } 
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- Navigation / Header -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-700 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+                MUMBAI MODS <span class="text-slate-400 font-light">| Financial Projection</span>
+            </h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
+                <a href="#overview" class="hover:text-cyan-400 transition">Overview</a>
+                <a href="#margins" class="hover:text-cyan-400 transition">Margins</a>
+                <a href="#excel-setup" class="hover:text-cyan-400 transition">Excel Formulas</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- SECTION 1: INTRODUCTION & HOOK -->
+        <!-- Goal: Inform. Justification: Large stats and clean text to establish the opportunity. -->
+        <section id="overview" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-block px-3 py-1 rounded-full bg-cyan-900/30 border border-cyan-500/30 text-cyan-400 text-xs font-bold tracking-wider uppercase">
+                    Arbitrage Model
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+                    Sourcing from <span class="text-purple-400">Delhi</span>.<br>
+                    Selling in <span class="text-cyan-400">Mumbai</span>.
+                </h2>
+                <p class="text-lg text-slate-400">
+                    The Mumbai automotive aftermarket is booming, but retail prices are high. By sourcing directly from Karol Bagh wholesale hubs, calculating precise landed costs, and executing retail installations, the Gross Margins are exceptionally lucrative.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="p-4 bg-slate-800 rounded-lg border-l-4 border-cyan-500">
+                        <p class="text-slate-400 text-sm">Avg. Gross Margin</p>
+                        <p class="text-3xl font-bold text-white">45-65%</p>
+                    </div>
+                    <div class="p-4 bg-slate-800 rounded-lg border-l-4 border-purple-500">
+                        <p class="text-slate-400 text-sm">Key Categories</p>
+                        <p class="text-3xl font-bold text-white">5</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Logistics Flow Visualization (HTML/Tailwind - No Mermaid) -->
+            <div class="glass-panel p-8 rounded-2xl shadow-2xl">
+                <h3 class="text-xl font-bold text-white mb-6">Logistics Pipeline</h3>
+                <div class="flex flex-col space-y-4">
+                    <!-- Step 1 -->
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-purple-600 rounded-lg text-xl font-bold shadow-lg shadow-purple-900/50">1</div>
+                        <div class="flex-1 bg-slate-800 p-3 rounded-md border border-slate-700">
+                            <span class="text-purple-300 font-bold">Karol Bagh (Source)</span>
+                            <div class="text-xs text-slate-500">Wholesale Bulk Rates</div>
+                        </div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="pl-5 text-slate-600 text-2xl">↓</div>
+                    <!-- Step 2 -->
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-600 rounded-lg text-xl font-bold shadow-lg shadow-blue-900/50">2</div>
+                        <div class="flex-1 bg-slate-800 p-3 rounded-md border border-slate-700">
+                            <span class="text-blue-300 font-bold">Logistics & Taxes</span>
+                            <div class="text-xs text-slate-500">+18% GST | +6-8% Handling</div>
+                        </div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="pl-5 text-slate-600 text-2xl">↓</div>
+                    <!-- Step 3 -->
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-cyan-500 rounded-lg text-xl font-bold shadow-lg shadow-cyan-900/50 text-black">3</div>
+                        <div class="flex-1 bg-slate-800 p-3 rounded-md border border-slate-700">
+                            <span class="text-cyan-400 font-bold">Mumbai Workshop</span>
+                            <div class="text-xs text-slate-500">Retail Sales & Installation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: COST vs REVENUE COMPARISON -->
+        <!-- Goal: Compare. Justification: Grouped Bar chart to show the massive gap between cost and retail. -->
+        <section class="space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-3xl font-bold text-white">Price Arbitrage Analysis</h2>
+                <p class="text-slate-400 mt-2">Comparison of Landed Cost vs. Mumbai Retail Price per Category.</p>
+            </div>
+            
+            <div class="glass-panel p-6 rounded-xl">
+                <div class="chart-container">
+                    <canvas id="costRevenueChart"></canvas>
+                </div>
+                <div class="mt-4 text-center text-sm text-slate-500">
+                    *Landed Cost includes Base Price + 18% GST + 8% Shipping Buffer
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-800 p-5 rounded-lg border border-slate-700">
+                    <h4 class="text-cyan-400 font-bold mb-2">Highest Margin</h4>
+                    <p class="text-white text-lg">Car Wraps (Vinyl/PPF)</p>
+                    <p class="text-slate-400 text-sm mt-1">Due to the high service component in installation, wraps offer the widest gap between material cost and retail price.</p>
+                </div>
+                <div class="bg-slate-800 p-5 rounded-lg border border-slate-700">
+                    <h4 class="text-purple-400 font-bold mb-2">Volume Driver</h4>
+                    <p class="text-white text-lg">Android Systems</p>
+                    <p class="text-slate-400 text-sm mt-1">High demand item with moderate margins (~50%). Essential for cash flow.</p>
+                </div>
+                <div class="bg-slate-800 p-5 rounded-lg border border-slate-700">
+                    <h4 class="text-pink-400 font-bold mb-2">High Ticket</h4>
+                    <p class="text-white text-lg">Alloy Wheels</p>
+                    <p class="text-slate-400 text-sm mt-1">Lower percentage margin (~30%) but high absolute rupee profit per sale.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: MARGIN PERCENTAGE ANALYSIS -->
+        <!-- Goal: Relationships/Compare. Justification: Horizontal Bar for ranking margins clearly. -->
+        <section id="margins" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-white">Gross Profit Potential</h2>
+                <p class="text-slate-400">
+                    The chart represents the Gross Profit Margin (%), calculated as <code class="bg-slate-800 px-1 py-0.5 rounded text-cyan-400 text-xs">(Retail - Landed) / Retail</code>. This is your buffer to cover rent, labor, and utilities.
+                </p>
+                <div class="chart-container">
+                    <canvas id="marginChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Cost Breakdown Pie -->
+            <!-- Goal: Composition. Justification: Donut chart to show where money goes before profit. -->
+            <div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center">
+                <h3 class="text-xl font-bold text-white mb-4 w-full text-left">Typical Cost Structure (Per Unit)</h3>
+                <div class="chart-container" style="height: 250px;">
+                    <canvas id="costStructureChart"></canvas>
+                </div>
+                <div class="mt-6 text-sm text-slate-400 text-center max-w-sm">
+                    GST and Logistics add roughly <strong>26%</strong> to your Delhi purchase price. This "Landed Cost" is your true baseline.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: EXCEL BLUEPRINT (The User's Specific Request) -->
+        <!-- Goal: Organize/Inform. Justification: Table + Code Block for copy-paste utility. -->
+        <section id="excel-setup" class="bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-900 to-slate-900 p-6 border-b border-slate-700">
+                <h2 class="text-2xl font-bold text-white flex items-center">
+                    <span class="mr-3 text-3xl">📊</span> Excel Sheet Structure & Formulas
+                </h2>
+                <p class="text-purple-200 mt-2">Replicate this structure in your spreadsheet for accurate projections.</p>
+            </div>
+            
+            <div class="p-6 overflow-x-auto">
+                <!-- The Data Table -->
+                <table class="w-full text-left text-sm text-slate-400 mb-8">
+                    <thead class="bg-slate-800 text-xs uppercase font-bold text-slate-200">
+                        <tr>
+                            <th class="px-4 py-3 rounded-tl-lg">Item Category</th>
+                            <th class="px-4 py-3">Delhi Cost (₹)</th>
+                            <th class="px-4 py-3">GST (18%)</th>
+                            <th class="px-4 py-3">Ship (8%)</th>
+                            <th class="px-4 py-3 bg-purple-900/20 border-l border-purple-500/30 text-purple-300">Landed Cost (₹)</th>
+                            <th class="px-4 py-3">Mumbai Retail (₹)</th>
+                            <th class="px-4 py-3 text-cyan-400">Gross Profit (₹)</th>
+                            <th class="px-4 py-3 rounded-tr-lg text-cyan-400">Margin %</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700">
+                        <tr>
+                            <td class="px-4 py-3 font-medium text-white">Car Wrap (Roll)</td>
+                            <td class="px-4 py-3">9,000</td>
+                            <td class="px-4 py-3">1,620</td>
+                            <td class="px-4 py-3">720</td>
+                            <td class="px-4 py-3 bg-purple-900/10 border-l border-purple-500/30 text-white font-bold">11,340</td>
+                            <td class="px-4 py-3">35,000</td>
+                            <td class="px-4 py-3 text-cyan-300">23,660</td>
+                            <td class="px-4 py-3 text-cyan-300 font-bold">67.6%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-medium text-white">Android System</td>
+                            <td class="px-4 py-3">6,000</td>
+                            <td class="px-4 py-3">1,080</td>
+                            <td class="px-4 py-3">480</td>
+                            <td class="px-4 py-3 bg-purple-900/10 border-l border-purple-500/30 text-white font-bold">7,560</td>
+                            <td class="px-4 py-3">15,000</td>
+                            <td class="px-4 py-3 text-cyan-300">7,440</td>
+                            <td class="px-4 py-3 text-cyan-300 font-bold">49.6%</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-medium text-white">LED Headlights</td>
+                            <td class="px-4 py-3">3,000</td>
+                            <td class="px-4 py-3">540</td>
+                            <td class="px-4 py-3">240</td>
+                            <td class="px-4 py-3 bg-purple-900/10 border-l border-purple-500/30 text-white font-bold">3,780</td>
+                            <td class="px-4 py-3">8,000</td>
+                            <td class="px-4 py-3 text-cyan-300">4,220</td>
+                            <td class="px-4 py-3 text-cyan-300 font-bold">52.8%</td>
+                        </tr>
+                         <tr>
+                            <td class="px-4 py-3 font-medium text-white">Alloy Wheels (Set)</td>
+                            <td class="px-4 py-3">25,000</td>
+                            <td class="px-4 py-3">4,500</td>
+                            <td class="px-4 py-3">2,000</td>
+                            <td class="px-4 py-3 bg-purple-900/10 border-l border-purple-500/30 text-white font-bold">31,500</td>
+                            <td class="px-4 py-3">45,000</td>
+                            <td class="px-4 py-3 text-cyan-300">13,500</td>
+                            <td class="px-4 py-3 text-cyan-300 font-bold">30.0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Formulas Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Column 1: Core Costs -->
+                    <div class="bg-black/40 p-5 rounded-lg border border-slate-700">
+                        <h4 class="text-white font-bold mb-3 border-b border-slate-700 pb-2">1. Landed Cost Formula</h4>
+                        <p class="text-xs text-slate-400 mb-2">Assuming <strong>B2</strong> is Delhi Price, <strong>C2</strong> is GST Rate (18%), <strong>D2</strong> is Shipping Rate (8%).</p>
+                        <code class="block bg-slate-800 p-3 rounded text-green-400 font-mono text-sm mb-2">
+                            =B2 * (1 + 18%) * (1 + 8%)
+                        </code>
+                        <p class="text-xs text-slate-500">Alternatively: <code>=B2 * 1.274</code> (Short Method)</p>
+                    </div>
+
+                    <!-- Column 2: Margins -->
+                    <div class="bg-black/40 p-5 rounded-lg border border-slate-700">
+                        <h4 class="text-white font-bold mb-3 border-b border-slate-700 pb-2">2. Margin Formulas</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-xs text-slate-400">Gross Profit (₹)</p>
+                                <code class="block bg-slate-800 p-2 rounded text-blue-400 font-mono text-sm">=Retail_Price - Landed_Cost</code>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Gross Margin (%)</p>
+                                <code class="block bg-slate-800 p-2 rounded text-blue-400 font-mono text-sm">=Gross_Profit / Retail_Price</code>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Full Width: Net Profit -->
+                    <div class="md:col-span-2 bg-gradient-to-r from-purple-900/20 to-black/40 p-5 rounded-lg border border-purple-500/30">
+                        <h4 class="text-white font-bold mb-3">3. Net Profit Calculation (The Bottom Line)</h4>
+                        <p class="text-sm text-slate-300 mb-3">
+                            To account for Mumbai Workshop Rent and Labor, do not subtract these from individual items. Subtract them from the <strong>Total Monthly Gross Profit</strong>.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <span class="text-purple-400 font-bold block mb-1">Step A: Total Gross Profit</span>
+                                <code class="bg-slate-800 px-2 py-1 rounded text-slate-300">=SUM(Gross_Profit_Column)</code>
+                            </div>
+                            <div>
+                                <span class="text-cyan-400 font-bold block mb-1">Step B: Net Profit</span>
+                                <code class="bg-slate-800 px-2 py-1 rounded text-slate-300">=Total_Gross_Profit - (Rent + Labor + Utilities)</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-slate-600 text-sm py-10 border-t border-slate-800">
+            <p>&copy; 2024 Mumbai Mods Financial Planner. generated by Canvas.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- 1. CONFIG: Chart Colors & Fonts ---
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.font.family = 'Inter';
+        
+        const colors = {
+            cyan: '#06b6d4',
+            purple: '#8b5cf6',
+            pink: '#f43f5e',
+            slate: '#475569',
+            white: '#f8fafc'
+        };
+
+        // --- 2. DATA: Source Material ---
+        const products = ['Car Wrap (Roll)', 'Android System', 'LED Headlights', 'Alloy Wheels (Set)', 'Interior Kit'];
+        
+        // Costs & Prices (Averages based on ranges provided)
+        const delhiCost = [9000, 6000, 3000, 25000, 8000];
+        const gstRate = 0.18;
+        const shipRate = 0.08;
+        
+        // Calculate Landed Costs
+        const landedCost = delhiCost.map(c => Math.round(c * (1 + gstRate) * (1 + shipRate)));
+        
+        // Mumbai Retail Prices
+        const mumbaiRetail = [35000, 15000, 8000, 45000, 22000];
+        
+        // Calculate Margins
+        const grossProfit = mumbaiRetail.map((r, i) => r - landedCost[i]);
+        const marginPercent = mumbaiRetail.map((r, i) => ((r - landedCost[i]) / r) * 100);
+
+        // --- 3. HELPER: Tooltip Callback for Multiline Labels ---
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- 4. CHART: Cost vs Revenue (Bar) ---
+        new Chart(document.getElementById('costRevenueChart'), {
+            type: 'bar',
+            data: {
+                labels: products, // Short enough, no wrapping needed for these category names
+                datasets: [
+                    {
+                        label: 'Landed Cost (Delhi + Logs)',
+                        data: landedCost,
+                        backgroundColor: colors.purple,
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Mumbai Retail Price',
+                        data: mumbaiRetail,
+                        backgroundColor: colors.cyan,
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { position: 'top', labels: { color: colors.white } }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0' }
+                    }
+                }
+            }
+        });
+
+        // --- 5. CHART: Margin Percentage (Horizontal Bar) ---
+        new Chart(document.getElementById('marginChart'), {
+            type: 'bar', // IndexAxis 'y' makes it horizontal
+            data: {
+                labels: products,
+                datasets: [{
+                    label: 'Gross Margin %',
+                    data: marginPercent,
+                    backgroundColor: [
+                        colors.pink, // High
+                        colors.cyan, // Med
+                        colors.cyan, // Med
+                        colors.slate, // Low
+                        colors.cyan  // Med
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        grid: { color: '#334155' },
+                        ticks: { callback: function(value) { return value + '%' } }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#f8fafc', font: { weight: 'bold' } }
+                    }
+                }
+            }
+        });
+
+        // --- 6. CHART: Cost Structure Breakdown (Doughnut) ---
+        // Showing breakdown for a generalized item to visualize overhead
+        new Chart(document.getElementById('costStructureChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Base Cost (Delhi)', 'GST (18%)', 'Shipping & Handling (8%)'],
+                datasets: [{
+                    data: [100, 18, 8],
+                    backgroundColor: [colors.purple, colors.pink, colors.slate],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { position: 'right', labels: { color: '#cbd5e1' } }
+                }
+            }
+        });
+
+    </script>
+    
+    <!-- Analysis of Source Material:
+         1. Core Data: Car Wrap, Android, LED, Alloy, Interior.
+         2. Costs: Delhi Wholesale (Base).
+         3. Overhead: GST (18%) + Ship (5-8%). Used 8% for conservative estimate.
+         4. Revenue: Mumbai Retail.
+         5. Logic: Landed Cost = Base * 1.18 * 1.08. Margin = (Retail - Landed)/Retail.
+         
+         Visualization Choices:
+         1. Overview: HTML Text/Stats for high-level impact (Goal: Inform).
+         2. Cost vs Revenue: Grouped Bar Chart to show the gap (Arbitrage) clearly (Goal: Compare).
+         3. Margin %: Horizontal Bar Chart to rank products by profitability (Goal: Rank/Compare).
+         4. Cost Breakdown: Donut chart to show the hidden costs of logistics (Goal: Composition).
+         5. Excel Data: HTML Table for direct copy-paste utility (User Request).
+         
+         Constraint Checks:
+         - No SVG graphics used (used CSS shapes/Tailwind).
+         - No Mermaid JS used.
+         - Single HTML file.
+         - Chart.js with label wrapping logic (simple labels used, config included).
+         - Palette: Vibrant Neon (Midnight/Cyan/Purple) from implicit context of "Car Mods".
+    -->
+</body>
+</html>
